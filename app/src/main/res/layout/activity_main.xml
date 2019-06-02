@@ -15,13 +15,23 @@
 
     </FrameLayout>
 
-    <ToggleButton
-        android:id="@+id/lane_toggle_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="lane detection mode off"
-        android:textOn="lane detection mode on"
-        android:layout_alignParentTop="true" />
+<!--<TextView-->
+    <!--android:id="@+id/temptext"-->
+    <!--android:text="여기는 위도경도"-->
+    <!--android:layout_width="160dp"-->
+    <!--android:layout_height="160dp"-->
+    <!--android:layout_gravity="left" />-->
 
 
-</RelativeLayout>
+<ToggleButton
+android:id="@+id/lane_toggle_btn"
+android:layout_width="40dp"
+android:layout_height="160dp"
+android:layout_gravity="right"
+android:textOff=""
+android:textOn=""
+android:background="@drawable/toggle2"
+android:layout_alignParentRight="true" />
+
+
+    </RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/emailinput"
+        android:text="tt"
+        android:hint="ID"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/passwordInput"
+        android:text="tt"
+        android:hint="Password"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:text="Log in"
+            android:id="@+id/loginButton"
+            android:textAllCaps="false"
+            android:onClick="bt_login"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:text="Sign up"
+            android:id="@+id/signupButton"
+            android:textAllCaps="false"
+            android:onClick="bt_join"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember login"
+        android:id="@+id/checkBox"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
