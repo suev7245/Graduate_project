@@ -11,14 +11,14 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:id="@+id/emailinput"
-        android:text="tt"
+        android:text=""
         android:hint="ID"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:id="@+id/passwordInput"
-        android:text="tt"
+        android:text=""
         android:hint="Password"/>
 
     <LinearLayout

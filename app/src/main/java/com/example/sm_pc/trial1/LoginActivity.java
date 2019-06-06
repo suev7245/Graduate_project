@@ -37,9 +37,14 @@ public class LoginActivity extends AppCompatActivity {
     EditText id, pwd;
     String sid, spwd;
     Button login, join;
+    CheckBox check;
+    SharedPreferences loginPreferences;
+    SharedPreferences.Editor loginPrefsEditor;
+    Boolean saveLogin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -53,10 +58,16 @@ public class LoginActivity extends AppCompatActivity {
         id = (EditText)findViewById(R.id.emailinput);
         pwd = (EditText)findViewById(R.id.passwordInput);
 
+        check = (CheckBox)findViewById(R.id.checkBox);
+        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
 
-        sid = id.getText().toString();
-        spwd = pwd.getText().toString();
-
+        saveLogin = loginPreferences.getBoolean("saveLogin", false);
+        if (saveLogin == true) {
+            id.setText(loginPreferences.getString("username", ""));
+            pwd.setText(loginPreferences.getString("password", ""));
+            check.setChecked(true);
+        }
     }
 
     public void bt_login(View view)
@@ -64,6 +75,16 @@ public class LoginActivity extends AppCompatActivity {
         Log.e("su","siu");
         sid = id.getText().toString();
         spwd = pwd.getText().toString();
+
+        if (check.isChecked()) {
+            loginPrefsEditor.putBoolean("saveLogin", true);
+            loginPrefsEditor.putString("username", sid);
+            loginPrefsEditor.putString("password", spwd);
+            loginPrefsEditor.commit();
+        } else {
+            loginPrefsEditor.clear();
+            loginPrefsEditor.commit();
+        }
 
         loginDB ldb = new loginDB();
         ldb.execute();
